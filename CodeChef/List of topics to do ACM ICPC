@@ -1,0 +1,18 @@
+List of topics to do:
+Dynamic Programming, backtracking
+	(String Permutation)
+Greedy algorithms, DnC
+Trees, and graphs
+ad hoc, number theory, bit manipulation
+	(Sieve of Eratosthenes O(nloglogn), All factors of a number O(sqrt(n)), Prime Fact O(sqrt(n)), Euclid's Algo GCD O(loga)
+range queries
+	(Segment tree min query- contruct O(n), query O(logn))
+
+Number theory
+Graph theory
+Trees
+Segment tree
+Fenwick tree
+Tries
+BST
+STL : priority queue, dfs, bfs, sort- comparison operator

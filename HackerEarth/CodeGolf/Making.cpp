@@ -1,0 +1,4 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define F(i,x,y) for(int i=x;i<y;i++)
+int main(){int m,n,q,x,y,z,in,d,l,r,mi,t;cin>>m>>n>>q;long long int S[m+1][n+1],M[m+1][n+1],C[m+1][n+1];F(i,1,m+1)F(j,1,n+1)cin>>M[i][j];F(i,1,m+1)F(j,1,n+1){cin>>C[i][j];if(j==1)S[i][j]=C[i][j];else S[i][j]=S[i][j-1]+C[i][j];}while(q--){cin>>in;if(in==1){cin>>x>>y>>z;if(z>0){if(C[x][y]+z>M[x][y]){d=M[x][y]-C[x][y];C[x][y]=M[x][y];}else{d=z;C[x][y]+=z;}}else{if(C[x][y]+z<0){d=-C[x][y];C[x][y]=0;}else{d=z;C[x][y]+=z;} }F(i,y,n+1)S[x][i]+=d;}else{cin>>l>>r;mi=1e7;F(i,1,m+1){t=S[i][r]-S[i][l]+C[i][l];if(t<mi)mi=t;}cout<<mi<<endl;}}}

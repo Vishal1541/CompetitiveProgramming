@@ -1,0 +1,59 @@
+#include<bits/stdc++.h>
+#define ios std::ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
+
+using namespace std;
+
+string s;
+int i = 0;
+long long int cnt = 0;
+int alpha[500];
+map<char,int> neg;
+bool pairf = false;
+
+bool isAlpha(char a){
+     return (a>='A' && a<='Z' || a>='a' && a<='z');
+}
+
+long long int raiseToPow(long long int x, long long int power)
+{
+    long long int result;
+    long long int i;
+    result =1.0;
+    for (i=1; i<=power;i++)
+    {
+        result = result*x;
+    }
+    return(result);
+}
+
+int main(){
+     ios;
+     //freopen("boolean.in","r",stdin);
+     //freopen("boolean.out","w",stdout);
+     
+     cin>>s;
+     while(i<s.length()){
+          if(isAlpha(s[i])){
+               alpha[s[i]] = 1;
+               if(neg[s[i]]==-1)   pairf = true;
+               else neg[s[i]] = 1;
+               i++;
+          }
+          else if(s[i]=='|'){
+               i++;
+          }
+          else{
+               i++;
+               alpha[s[i]] = 1;
+               if(neg[s[i]]==1)    pairf = true;
+               else neg[s[i]] = -1;
+               i++;
+          }
+     }
+     for(i=0; i<500; i++)   if(alpha[i])   cnt++;
+     long long int ans = raiseToPow(2,cnt);
+     if(!pairf)     ans--;
+     cout<<ans<<endl;
+     
+     return 0;
+}
