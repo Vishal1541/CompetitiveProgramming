@@ -1,2 +1,2 @@
 # CompetitiveProgramming
-Repo contains almost all the problems I have solved in any competitive programming platform upto 20th June 2018.
+This repo contains almost all the problems I have solved in any competitive programming platform upto 20th June 2018.
